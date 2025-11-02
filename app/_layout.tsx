@@ -1,33 +1,12 @@
-import { colors } from '@/constants/theme'
-import { StatusBar, StyleSheet, Text, View } from 'react-native'
+import { Stack } from 'expo-router'
+import { StyleSheet, Text, View } from 'react-native'
 
-import Animated, { FadeInDown } from 'react-native-reanimated'
-
-const SplashScreen = () => {
+const _layout = () => {
  return (
-  <View style={styles.container}>
-   <StatusBar barStyle={'light-content'} backgroundColor={colors.secondaryHighlight} />
-   <Animated.Image
-    source={require('../assets/images/splashImage.png')}
-    entering={FadeInDown.duration(700).springify()}
-    style={styles.logo}
-    resizeMode={"contain"}
-   />
-  </View>
+  <Stack screenOptions={{ headerShown: false }} />
  )
 }
 
-export default SplashScreen
+export default _layout
 
-const styles = StyleSheet.create({
- container: {
-  flex: 1,
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: colors.background,
- },
- logo: {
-  height: '23%',
-  aspectRatio: 1,
- }
-})
+const styles = StyleSheet.create({})
